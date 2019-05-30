@@ -9,12 +9,16 @@ sumOfAll = [] # sumOfAll when calculating
 rangeFrom = float() #lowest x value tested
 rangeTo = float() #Highest x value tested
 rangeStep = float() #Steps of x values
+numerator = int() # numerator
+denominator = int() # denominator
 
 print("Range of X values")
 rangeFrom = float(input("From "))
 rangeTo = float(input("To "))
-print("Stepping Every")
-rangeStep = float(input())
+print("Stepping Every Num/Den")
+numerator = int(input("Numerator is "))
+denominator = int(input("Denominator is "))
+rangeStep = numerator/denominator
 print("Number of terms")
 order = int(input())
 
@@ -44,13 +48,17 @@ def counter(): #calculating each section
             sumOfAll.pop()
         else:
             answer.append(xvalue)
-        xvalue += rangeStep
+        #print(xvalue)
+        #print(rangeStep)
+        xvalue = round(xvalue+rangeStep,2)
+        #xvalue += rangeStep
 
 for i in range(0,order):
     var = inputUser()
-    acoef.append(var[0])
-    apower.append(var[1])
-
+    acoef.append(float(var[0]))
+    apower.append(float(var[1]))
+print(acoef)
+print(apower)
 #calculation
 
 counter()
