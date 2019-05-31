@@ -53,21 +53,11 @@ def counter(): #calculating each section
         xvalue += rangeStep #round to avoid long number
 #        print(xvalue)
 
-#def rangeOfx():
-#    difOfRange = int(rangeTo - rangeFrom)
-#    seriesOfValues = [] # series of x values to try
-#    for i4 in range(0,round(difOfRange/rangeStep)):
-#        seriesOfValues.append(rangeFrom+i4*rangeStep)
-#    return(seriesOfValues)
 
-
-#for i in range(0,order):
-#    var = inputUser()
-#    acoef.append(float(var[0]))
-#    apower.append(float(var[1]))
-
-acoef = [-1176,-2590,-1741,-241,78]
-apower = [4,3,2,1,0]
+for i in range(0,order):
+    var = inputUser()
+    acoef.append(float(var[0]))
+    apower.append(float(var[1]))
 
 print(acoef)
 print(apower)
