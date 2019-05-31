@@ -1,7 +1,6 @@
 #Initiate
 import math
 from fractions import Fraction
-import valueTester
 #variables
 order = int() # Hihest Power
 acoef = [] # array of Coefficients
@@ -42,10 +41,9 @@ def aquireVar(start,stop):
     return(primeNum)
 
 def fractionAtor(primes):
-    print(primes)
+    #print(primes)
     listOfVar = []
     for i in range(0,len(primes)):
-        print(i)
         listOfVar.append(Fraction(1,primes[i]))
     return(listOfVar)
 
@@ -70,6 +68,10 @@ def division(coef,x,power):
 
 def counter(): #calculating each section
     xvalue = Fraction(int(rangeFrom)*1,1) # X value
+    statXvalue = xvalue
+    oneOnP = oneOnPrime(0,50)
+    numOfPrimes = len(oneOnP)
+    countingP = int(0)
     while xvalue <= rangeTo : #range of x variables tested
         sumVar = [0]
         for i3 in range(0,order):
@@ -80,7 +82,14 @@ def counter(): #calculating each section
             sumOfAll.pop()
         else:
             answer.append(xvalue)
-        print(oneOnPrime(0,50))
+        if xvalue == rangeFrom:
+            if countingP == 0:
+                xvalue =+ oneOnP[0]
+        if xvalue ==
+
+
+
+        #print(oneOnPrime(0,50))
         #xvalue += rangeStep #round to avoid long number
 #        print(xvalue)
 
