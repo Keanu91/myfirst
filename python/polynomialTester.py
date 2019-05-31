@@ -18,7 +18,6 @@ rangeTo = float(input("To "))
 print("Stepping Every Num/Den")
 numerator = int(input("Numerator is "))
 denominator = int(input("Denominator is "))
-rangeStep = numerator/denominator
 print("Number of terms")
 order = int(input())
 
@@ -44,18 +43,23 @@ def counter(): #calculating each section
         for i3 in range(0,order):
             sumVar.append(division(acoef[i3],xvalue,apower[i3]))
         sumOfAll.append(sum(sumVar))
+        print(sumVar)
         if sumOfAll[-1] != 0:
             sumOfAll.pop()
         else:
             answer.append(xvalue)
         #print(xvalue)
         #print(rangeStep)
-        xvalue = round(xvalue+rangeStep,4) #round to avoid long number
+        xvalue = round(xvalue+rangeStep,6) #round to avoid long number
 
-for i in range(0,order):
-    var = inputUser()
-    acoef.append(float(var[0]))
-    apower.append(float(var[1]))
+#for i in range(0,order):
+#    var = inputUser()
+#    acoef.append(float(var[0]))
+#    apower.append(float(var[1]))
+
+acoef = [-1176,-2590,-1741,-241,78]
+apower = [4,3,2,1,0]
+
 print(acoef)
 print(apower)
 #calculation
