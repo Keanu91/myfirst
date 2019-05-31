@@ -50,8 +50,7 @@ def counter(): #calculating each section
             answer.append(xvalue)
         #print(xvalue)
         #print(rangeStep)
-        xvalue = round(xvalue+rangeStep,2)
-        #xvalue += rangeStep
+        xvalue = round(xvalue+rangeStep,4) #round to avoid long number
 
 for i in range(0,order):
     var = inputUser()
