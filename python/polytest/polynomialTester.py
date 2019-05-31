@@ -1,6 +1,7 @@
 #Initiate
 import math
 from fractions import Fraction
+import valueTester
 #variables
 order = int() # Hihest Power
 acoef = [] # array of Coefficients
@@ -23,6 +24,35 @@ rangeStep = Fraction(numerator,denominator)
 print("Number of terms")
 order = int(input())
 
+#PRIMER BEGINNING
+def aquireVar(start,stop):
+    primeNum = []
+    for num in range(start,stop + 1):   # prime numbers are greater than 1
+        if num > 1:
+            for i in range(2,num):
+                if (num % i) == 0:
+                    break
+                else:
+                    primeNum.append(num)
+                if len(primeNum) > 1:
+                    if primeNum[-1] != primeNum[-2]:
+                        break
+                    else:
+                        primeNum.pop()
+    return(primeNum)
+
+def fractionAtor(primes):
+    print(primes)
+    listOfVar = []
+    for i in range(0,len(primes)):
+        print(i)
+        listOfVar.append(Fraction(1,primes[i]))
+    return(listOfVar)
+
+def oneOnPrime(start,stop):
+    return(fractionAtor(aquireVar(start,stop)))
+
+#PrimerEND
 
 def inputUser(): # taking in input of user
     coef = float()
@@ -50,7 +80,8 @@ def counter(): #calculating each section
             sumOfAll.pop()
         else:
             answer.append(xvalue)
-        xvalue += rangeStep #round to avoid long number
+        print(oneOnPrime(0,50))
+        #xvalue += rangeStep #round to avoid long number
 #        print(xvalue)
 
 
