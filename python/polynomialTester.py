@@ -54,11 +54,12 @@ def counter(): #calculating each section
 #        print(xvalue)
 
 
-for i in range(0,order):
-    var = inputUser()
-    acoef.append(float(var[0]))
-    apower.append(float(var[1]))
-
+#for i in range(0,order):
+#    var = inputUser()
+#    acoef.append(float(var[0]))
+#    apower.append(float(var[1]))
+acoef = [-1176,-2590,-1741,-241,78]
+apower = [4,3,2,1,0]
 print(acoef)
 print(apower)
 #calculation
@@ -66,5 +67,5 @@ print(apower)
 counter()
 
 print("final sumOfAll")
-print(sumOfAll)
+#print(sumOfAll)
 print(answer)
