@@ -1,5 +1,6 @@
 #Initiate
 import math
+from fractions import Fraction
 #variables
 order = int() # Hihest Power
 acoef = [] # array of Coefficients
@@ -18,6 +19,7 @@ rangeTo = float(input("To "))
 print("Stepping Every Num/Den")
 numerator = int(input("Numerator is "))
 denominator = int(input("Denominator is "))
+rangeStep = Fraction(numerator,denominator)
 print("Number of terms")
 order = int(input())
 
@@ -37,20 +39,27 @@ def division(coef,x,power):
     return(res)
 
 def counter(): #calculating each section
-    xvalue = rangeFrom # X value
-    while xvalue < rangeTo : #range of x variables tested
+    xvalue = Fraction(int(rangeFrom)*1,1) # X value
+    while xvalue <= rangeTo : #range of x variables tested
         sumVar = [0]
         for i3 in range(0,order):
             sumVar.append(division(acoef[i3],xvalue,apower[i3]))
         sumOfAll.append(sum(sumVar))
-        print(sumVar)
+        #print(sumVar)
         if sumOfAll[-1] != 0:
             sumOfAll.pop()
         else:
             answer.append(xvalue)
-        #print(xvalue)
-        #print(rangeStep)
-        xvalue = round(xvalue+rangeStep,6) #round to avoid long number
+        xvalue += rangeStep #round to avoid long number
+#        print(xvalue)
+
+#def rangeOfx():
+#    difOfRange = int(rangeTo - rangeFrom)
+#    seriesOfValues = [] # series of x values to try
+#    for i4 in range(0,round(difOfRange/rangeStep)):
+#        seriesOfValues.append(rangeFrom+i4*rangeStep)
+#    return(seriesOfValues)
+
 
 #for i in range(0,order):
 #    var = inputUser()
@@ -65,6 +74,7 @@ print(apower)
 #calculation
 
 counter()
+
 print("final sumOfAll")
 print(sumOfAll)
 print(answer)
