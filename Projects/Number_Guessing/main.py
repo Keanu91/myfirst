@@ -1,3 +1,4 @@
+import random
 
 def userinput():
     in1 = input("Enter the lower number \n")
@@ -13,20 +14,54 @@ def numcheck(in1): #Determines if input is numerical
     return True
 
 def guessinput(): #function for user guesses
-    guess = input("Please enter your guess\n")
-    return[guess]
+    g = input("Please enter your guess\n")
+    return[g]
+
+def inrange(var1,var2):
+    if int(var2[0]) <= int(var1[0]) <= int(var2[1]):
+        return True
+    else:
+        return False
+
+def closeguess(guess,actual,maxr):
+    i=int(1)
+    while i <= maxr:
+        UpLo=[]
+        UpLo.append(actual-i)
+        UpLo.append(actual+i)
+        print(UpLo)
+        if inrange(guess,UpLo) is True:
+            return i
+        else:
+            i=i*10
 
 print("Welcome to Keaun's Number Guessing Game \n")
 print("To begin please enter a range")
 
 rg=userinput() #rg is range
 
+num = random.randint(int(rg[0]), int(rg[1]))
+
 while numcheck(rg) is False: #Call function to check input
     print("An entry was non-numeric please try again")
     rg = userinput()
 
-g1 = guessinput()
+renge=int(rg[1])-int(rg[0])
+guess=[0]
 
-while numcheck(g1) is False: #Call function to check input
-    print("An entry was non-numeric please try again")
-    g1 = guessinput()
+while int(guess[0]) != int(num):
+
+    guess = guessinput()
+
+    while numcheck(guess) is False: #Call function to check input
+        print("An entry was non-numeric please try again")
+        guess = guessinput()
+
+    while inrange(guess, rg) is False:
+        print("That guess was outside the range silly\nTry again")
+        guess = guessinput()
+
+    #closeguess(guess,num,renge)
+
+    #print("asjdn")
+print("Congrats u GOT IT\nThe number was "+str(guess[0]))
