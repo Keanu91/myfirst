@@ -1,9 +1,11 @@
 guess = input("put in a number\n")
 length = len(guess)
-fibseg=str("01")
-fibb=[0,1] #initialise fib sequence
+counter = 2
+fibseg=str("01") #fib segment for comparing
+fibb=[0,1] #fib calculation variable
 while str(fibseg) != str(guess):
     fibb.append(fibb[0]+fibb[1])
+    counter = counter + 1
     var = str(fibb[2])
     while len(var) > 0 and str(fibseg) != str(guess):
         if len(fibseg) == length:
@@ -14,3 +16,4 @@ while str(fibseg) != str(guess):
     del fibb[0]
 
 print(fibb)
+print("Displayed is the %s and %s fibonacci number" % ((counter-1),counter))
